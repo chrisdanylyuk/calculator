@@ -37,7 +37,11 @@ function reset() {
 
 document.querySelector('.point').addEventListener('click', point);
 function point() {
+    if (is_numeric(display.value.substr(display.value.length - 1))) {
     display.value = display.value + ".";
+    } else {
+         display.value = display.value.substr(0, display.value.length - 1)
+    }
 }
 
 function is_numeric(str){
